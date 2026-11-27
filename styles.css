@@ -1,2 +1,9 @@
+const form = document.querySelector(".needs-validation");
 
-/* Your CSS Code here. */
+form.addEventListener("submit", (event) => {
+  if (!form.checkValidity()) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  form.classList.add("was-validated");
+});
